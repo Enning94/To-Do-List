@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do-List</title>
-    <script defer src="/runtime.js"></script>
-    <script defer src="/main.js"></script>
-  </head>
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  <script defer src="/runtime.js"></script><script defer src="/main.js"></script></head>
   <body>
-    <h1>Module 2 (Solo-Project)</h1>
+    <div class="todo-container">
+      <div class="todo-title">
+        <p>Today's To Do</p>
+        <i class="bx bx-refresh"></i>
+      </div>
+      <hr />
+      <div class="todo-input">
+        <input type="text" placeholder="Add to your list..." />
+        <i class="bx bx-subdirectory-left"></i>
+      </div>
+      <hr />
+      <ul class="todo-list"></ul>
+      
+        <button type="button" class="remove-btn">Clear all completed</button>
+      
+    </div>
   </body>
 </html>
