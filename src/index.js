@@ -1,38 +1,22 @@
 // import _ from 'lodash';
+// import { fromPairs } from 'lodash';
 import './style.css';
+import addTodo from './modules/addTask.js';
+import deleteTodo from './modules/deleteTask.js';
+import editTodo from './modules/editTask.js';
+import getTodos from './modules/displayTodo.js';
 
-const task = [
-  {
-    index: [0],
-    description: 'Do Laundry',
-    completed: false,
-  },
-  {
-    index: [1],
-    description: 'Visit Mum',
-    completed: false,
-  },
-  {
-    index: [2],
-    description: 'Practice JavaScript',
-    completed: false,
-  },
-];
+const todoBtn = document.querySelector('.enter-btn');
 
-const todoList = () => {
-  const todos = document.querySelector('.todo-list');
-  task.forEach((task) => {
-    todos.innerHTML += `
-      <li class="todo">
-        <span>
-        <input class="box" type="checkbox" />
-        <input type="text" value="${task.description}" />
-        </span>
-        <i class='bx bx-dots-vertical-rounded'></i>
-      </li>
-      <hr>
-      `;
-  });
-};
+const todoList = document.querySelector('.todo-list');
 
-todoList();
+document.addEventListener('DOMContentLoaded', getTodos);
+todoBtn.addEventListener('click', addTodo);
+todoList.addEventListener('click', deleteTodo);
+
+todoList.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    editTodo(e);
+  }
+});
