@@ -1,8 +1,10 @@
-import { editLocalTodos } from "./localStorage.js";
-export const editTodo = (e)=>{
+import { editLocalTodos } from './localStorage.js';
+
+const editTodo = (e) => {
   const item = e.target;
-  if (item.classList[0] === "inp") {
+  if (item.classList[0] === 'inp') {
     const todo = item.parentElement;
     editLocalTodos(todo);
   }
-}
+};
+export default editTodo;
