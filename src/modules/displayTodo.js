@@ -17,7 +17,7 @@ const getTodos = () => {
     todoDiv.appendChild(completedBtn);
 
     const newTodo = document.createElement('li');
-    let inputClass = todo.completed === true ? 'completed':'inp'; 
+    const inputClass = todo.completed === true ? 'completed' : 'inp';
     newTodo.classList.add('todo-item');
     newTodo.innerHTML = `<input type="text" value = "${todo.description}" class ="${inputClass}">`;
     todoDiv.appendChild(newTodo);

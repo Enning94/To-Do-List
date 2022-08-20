@@ -1,8 +1,8 @@
-const clearTodo = (e) => {
+const clearTodo = () => {
   let todos;
-  if (localStorage.getItem('todos')===null){
+  if (localStorage.getItem('todos') === null) {
     todos = [];
-  }else{
+  } else {
     todos = JSON.parse(localStorage.getItem('todos'));
   }
   const uncompleted = todos.filter((todo) => todo.completed === false);
@@ -14,5 +14,5 @@ const clearTodo = (e) => {
   localStorage.setItem('todos', JSON.stringify(updateTasks));
   todos = updateTasks;
   window.location.reload();
-}
+};
 export default clearTodo;
