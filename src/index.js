@@ -1,5 +1,3 @@
-import _ from 'lodash';
-// import { fromPairs } from 'lodash';
 import './style.css';
 import addTodo from './modules/addTask.js';
 import deleteTodo from './modules/deleteTask.js';
