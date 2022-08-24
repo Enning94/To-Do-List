@@ -4,20 +4,32 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
 
-  entry: './src/index.js',
+  entry: {
+    bundle: path.resolve(__dirname, 'src/index.js'),
+  },
 
+  devtool: 'source-map',
   devServer: {
-    static: './dist',
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
+    },
+    port: 3000,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      title: 'A TODO list',
+      filename: 'index.html',
+      template: path.resolve(__dirname, 'src', 'index.html'),
     }),
   ],
-
   output: {
-    filename: '[name].js',
+    filename: '[name][contenthash].js',
+    assetModuleFilename: '[name][ext]',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     publicPath: '/',
