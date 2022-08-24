@@ -1,4 +1,4 @@
-import './style.css';
+import './index.css';
 import addTodo from './modules/addTask.js';
 import deleteTodo from './modules/deleteTask.js';
 import editTodo from './modules/editTask.js';
